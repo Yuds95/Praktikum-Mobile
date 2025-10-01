@@ -33,13 +33,16 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 20),
             Expanded(
               child: ListView.builder(
-                itemCount: vehicles.length, // Perbaiki di sini
+                itemCount: vehicleList.length,
                 itemBuilder: (context, index) {
-                  final vehicle = vehicles[index]; // Perbaiki di sini
+                  final vehicle = vehicleList[index];
                   return Card(
                     child: ListTile(
-                      title: Text(vehicle['name'] ?? ''),
-                      subtitle: Text(vehicle['type'] ?? ''),
+                      leading: vehicle.imageUrls.isNotEmpty
+                          ? Image.network(vehicle.imageUrls[0], width: 60, height: 40, fit: BoxFit.cover)
+                          : null,
+                      title: Text(vehicle.name),
+                      subtitle: Text(vehicle.type),
                       onTap: () {
                         Navigator.push(
                           context,

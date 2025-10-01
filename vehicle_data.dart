@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 class Vehicle {
   String name;
   String type;
@@ -20,6 +22,17 @@ class Vehicle {
   });
 }
 
+final List<Map<String, String>> vehicles = [
+  {
+    'name': 'Toyota Avanza',
+    'type': 'MPV',
+    'description': 'Mobil keluarga yang irit dan nyaman untuk perjalanan jauh.',
+    'engine': '1.5L DOHC Dual VVT-i',
+    'fuelType': 'Bensin',
+    'price': 'Rp 200.000.000',
+    'imageAsset': 'images/toyota-avanza.jpg',
+  },
+];
 var vehicleList = [
   Vehicle(
     name: 'Toyota Avanza',
@@ -110,11 +123,3 @@ var vehicleList = [
   ),
 ];
 
-final List<Map<String, String>> vehicles = [
-  {
-    'name': 'Toyota Avanza',
-    'type': 'MPV',
-    'description': 'Mobil keluarga yang irit dan nyaman untuk perjalanan jauh.'
-  },
-  // ...data lain...
-];
